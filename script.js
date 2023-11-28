@@ -1,13 +1,15 @@
 /* ESERCIZIO 1
  Scrivi un algoritmo per trovare il più grande tra due numeri interi.
 */
-let numb1 = 50;
-let numb2 = 25;
+let numb1 = 50
+let numb2 = 25
 
 if (numb1 > numb2) {
   console.log('50 è più grande di 25')
+ } else if (numb2 > numb1) {
+  console.log("25 è maggiore di 50")
 } else {
-  console.log("sono uguali o 25 è maggiore");
+  console.log("i due numeri sono uguali")
 }
 
 /* SCRIVI QUI LA TUA RISPOSTA */
@@ -18,7 +20,7 @@ if (numb1 > numb2) {
 let mun = 7
 
 if (mun !== 5) {
-  console.log("not equal");
+  console.log("not equal")
 }
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -28,20 +30,20 @@ if (mun !== 5) {
 let modulo = 20
 
 if (modulo % 5 === 0) {
-  console.log("divisibile per 5");
+  console.log("divisibile per 5")
 }
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 4
   Scrivi un algoritmo per verificare che, dati due numeri interi, il valore di uno di essi sia 8 oppure se la loro addizione/sottrazione sia uguale a 8.
 */
-let firstNumber = 3;
-let secondNumber = 5;
+let firstNumber = 3
+let secondNumber = 5
 
 if (firstNumber === 8 || secondNumber === 8 || firstNumber + secondNumber === 8 || Math.abs(firstNumber - secondNumber) === 8) {
-  console.log("Uno dei numeri è 8 oppure la loro somma/differenza è 8");
+  console.log("Uno dei numeri è 8 oppure la loro somma/differenza è 8")
 } else {
-  console.log("Nessuna delle condizioni è soddisfatta");
+  console.log("Nessuna delle condizioni è soddisfatta")
 }
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -50,29 +52,38 @@ if (firstNumber === 8 || secondNumber === 8 || firstNumber + secondNumber === 8 
   C'è una promozione in corso: se il totale del carrello supera 50, l'utente ha diritto alla spedizione gratuita (altrimenti la spedizione ha un costo fisso pari a 10).
   Crea un algoritmo che determini l'ammontare totale che deve essere addebitato all'utente per il checkout.
 */
-let totalShoppingCart = 50
-let risultato
-if (totalShoppingCart <= 50) {
-  risultato = totalShoppingCart + 10
-  console.log( 'la spesa non supera i 50' , risultato)
-  risultato = totalShoppingCart
-  console.log('la spedizione gratuita ammonta' , risultato)
+let totalShoppingCart = 30
+let totalToPay
+const shippingCost = 10 // spese di spedizione
+
+if (totalShoppingCart > 50) {
+  // spedizione gratuita
+ totalToPay = totalShoppingCart // costo carrello, senza spese aggiuntive
+} else {
+  totalToPay = totalShoppingCart + shippingCost
 }
+
+console.log('totalToPay' , totalToPay)
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 6
   Stai lavorando su un sito di e-commerce. Oggi è il Black Friday e viene applicato il 20% su ogni prodotto.
   Modifica la risposta precedente includendo questa nuova promozione nell'algoritmo, determinando come prima se le spedizioni sono gratuite oppure no e e calcolando il totale.
 */
-let sconto = totalShoppingCart * 0.8
-let totalSconto = totalShoppingCart - sconto
+let totalShoppingCart2 = 30
+let totalToPay2
+const shippingCost2 = 10
 
-if (totalSconto < 50) {
-  result = totalSconto + 10
-  console.log("totale " , result)
+if (totalShoppingCart2 * 0.8 > 50) {
+  // spedizione gratuita
+ totalToPay2 = totalShoppingCart2 * 0.8 // costo carrello, senza spese aggiuntive
 } else {
-  console.log("hai diritto alla spedizione gratuita")
+  totalToPay2 = totalShoppingCart2 + shippingCost2
 }
+
+console.log('totalToPay' , totalToPay2)
+
+
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 7
@@ -83,11 +94,26 @@ if (totalSconto < 50) {
 let num1 = 10
 let num2 = 20
 let num3 = 30
-if (num1 <= num2 && num1 <= num3) {
-  if (num2 <= num3) {
-    console.log(num3, num2, num1)
+
+if (num1 >= num2 && num1 >= num3) {
+  if (num2 >= num3) {
+      console.log('valori ordinati: num1, num2, num3');
+  } else {
+      console.log('valori ordinati: num1, num3, num2');
   }
-} 
+} else if (num2 >= num1 && num2 >= num3) {
+  if (num1 >= num3) {
+      console.log('valori ordinati num2, num1, num3');
+  } else {
+      console.log('valori ordinati num2, num3, num1');
+  }
+} else {
+  if (num1 >= num2) {
+      console.log('valori ordinati num3, num1, num2');
+  } else {
+      console.log('valori ordinati num3, num2, num1');
+  }
+}
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -101,6 +127,11 @@ if (typeof valore === 'number' && !isNaN(valore)) {
 } else {
   console.log("Il valore fornito non è un numero");
 }
+
+const z = 'cadrega'
+
+if(typeof z === 'number')
+console.log('z è un numero')
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 /* ESERCIZIO 9
@@ -190,4 +221,6 @@ const me = {
   */
     numbersArray[numbersArray.length - 1] = 100;
     console.log(numbersArray)
+
+    
   /* SCRIVI QUI LA TUA RISPOSTA */
